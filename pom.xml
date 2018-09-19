@@ -36,5 +36,6 @@
            <url>http://localhost:18081/repository/mvn-snapshot/</url>
         </snapshotRepository>
         </distributionManagement>
+	
 
 </project>
