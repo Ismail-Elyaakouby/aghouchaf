@@ -29,11 +29,11 @@
 	<distributionManagement>
         <repository>
           <id>nexus</id>
-          <url>http://192.168.43.55:8081/repository/sma/</url>
+          <url>http://localhost:18081/repository/mvn-releases/</url>
         </repository>
         <snapshotRepository>
            <id>nexus</id>
-           <url>http://192.168.43.55:8081/repository/sma2/</url>
+           <url>http://localhost:18081/repository/mvn-snapshot/</url>
         </snapshotRepository>
         </distributionManagement>
 
