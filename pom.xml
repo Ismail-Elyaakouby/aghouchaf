@@ -29,13 +29,13 @@
 	<distributionManagement>
         <repository>
           <id>maven-releases</id>
-          <url>http://192.168.2.129:8081/repository/mvn-release/</url>
+          <url>http://192.168.2.129:18081/repository/mvn-release/</url>
            <!-- <url>http://localhost:18081/repository/mvn-release/</url>-->
         </repository>
         <snapshotRepository>
            <id>maven-snapshot</id>
            <!-- url>http://localhost:18081/repository/mvn-snapshot/</url>-->
-	   <url>http://192.168.2.129:8081/repository/mvn-snapshot/</url>
+	   <url>http://192.168.2.129:18081/repository/mvn-snapshot/</url>
         </snapshotRepository>
         </distributionManagement>
 	
