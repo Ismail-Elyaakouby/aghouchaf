@@ -6,10 +6,15 @@ pipeline {
         }
     }
     stages {
+        stage('install') {
+            steps {
+                sh 'mvn clean install -e -X'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean compile'
             }
-        }
+        }  
     }
 }
