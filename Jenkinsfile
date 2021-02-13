@@ -1,21 +1,11 @@
-pipeline {
-    agent "slave-maven-01"
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+node('slave-maven-01'){
+stage('stage1') {
+sh '''echo  stage1 steps'''
+}
+stage('stage2') {
+sh '''echo stage2 steps'''
+}
+stage('stage3') {
+sh '''echo stage3 steps'''
+}
 }
