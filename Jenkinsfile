@@ -1,4 +1,8 @@
 node('slave-maven-01'){
+
+  tools {
+      maven 'maven-3.6.3'
+  }
   stage('compile') {
     sh '''echo  stage1 steps'''
     sh '''mvn clean compile'''
