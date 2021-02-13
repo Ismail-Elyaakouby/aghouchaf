@@ -1,17 +1,15 @@
-node('slave-maven-01'){
-
-  tools {
-      maven 'maven-3.6.3'
-  }
-  stage('compile') {
-    sh '''echo  stage1 steps'''
-    sh '''mvn clean compile'''
-  }
-  stage('deploy') {
-  sh '''echo stage2 steps'''
-  sh '''mvn clean deploy -DuniqueVersion=true'''
-  }
-  stage('stage3') {
-  sh '''echo stage3 steps'''
-  }
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B'
+            }
+        }
+    }
 }
