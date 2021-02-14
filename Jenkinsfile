@@ -29,7 +29,7 @@ node('slave-maven-01') {
        stage('Deploy'){
 
          echo 'Push to Repo'
-         #sh './dockerPushToRepo.sh'
+        //sh './dockerPushToRepo.sh'
 
        }
     }
