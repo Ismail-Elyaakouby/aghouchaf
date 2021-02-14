@@ -5,17 +5,17 @@ agent {
         args '-u root'
     }
   }
-  stages {
-    stage('Build') {
-        steps {
-            sh 'mvn -B -DskipTests clean install'
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean install'
+            }
+        }
+        
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -f Dockerfile -t hellowordv01 .'
+            }
         }
     }
-      
-stage('Docker Build') {
-   agent any
-   steps {
-     sh 'docker build -f Dockerfile -t hellowordv01 .'
-   }
-  }
 }
