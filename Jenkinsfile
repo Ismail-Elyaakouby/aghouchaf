@@ -11,5 +11,11 @@ agent {
             sh 'mvn -B -DskipTests clean install'
         }
     }
+      
+stage('Docker Build') {
+   agent any
+   steps {
+     sh 'docker build -f Dockerfile -t hellowordv01 .'
+   }
   }
 }
