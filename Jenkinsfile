@@ -14,7 +14,7 @@ agent {
         
         stage('Docker Build') {
             steps {
-                sh 'docker build -f Dockerfile -t hellowordv01 .'
+                sh '/usr/bin/docker build -f Dockerfile -t hellowordv01 .'
             }
         }
     }
