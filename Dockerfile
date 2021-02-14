@@ -1,6 +1,18 @@
-# Pull base image 
-From tomcat:8-jre8 
+FROM centos
 
-# Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
-COPY ./target/hello-world-war-1.0.6.war /usr/local/tomcat/webapps
+MAINTAINER ismail@gmail.com
+
+RUN mkdir /opt/tomcat/
+
+WORKDIR /opt/tomcat
+RUN curl -O https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz
+RUN tar xvfz apache*.tar.gz
+RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
+RUN yum -y install java
+RUN java -version
+
+COPY ./target/hello-world-war-1.0.6.war /opt/tomcat/webapps
+
+EXPOSE 8080
+
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
