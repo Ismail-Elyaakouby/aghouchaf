@@ -17,7 +17,7 @@ node('slave-maven-01') {
 
          print "Environment will be : ${env.NODE_ENV}"
 
-         sh 'mvn -B -DskipTests clean install'
+         sh 'mvn -B -DskipTests clean install -Dmaven.clean.failOnError=false'
 
        }
 
